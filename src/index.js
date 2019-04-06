@@ -6,7 +6,7 @@ const path = require('path');
 let mainWindow;
 let newProductWindow;
 
-// Reload in Development for Browser Windows
+
 if(process.env.NODE_ENV !== 'production') {
   require('electron-reload')(__dirname, {
     electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
@@ -27,10 +27,10 @@ app.on('ready', () => {
 
   // Menu
   const mainMenu = Menu.buildFromTemplate(templateMenu);
-  // Set The Menu to the Main Window
+
   Menu.setApplicationMenu(mainMenu);
 
-  // If we close main Window the App quit
+
   mainWindow.on('closed', () => {
     app.quit();
   });
